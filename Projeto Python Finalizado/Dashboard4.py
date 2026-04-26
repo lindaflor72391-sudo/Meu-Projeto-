@@ -119,6 +119,8 @@ else:
             df_plot = df.groupby(sel_x)[sel_y].sum()
             
             st.bar_chart(df_plot)
+            with st.expander("Ver dados brutos do arquivo"):
+                st.dataframe(df, use_container_width=True)
                 
         except Exception as e:
             st.error("Erro ao processar o arquivo. Verifique o formato.")
